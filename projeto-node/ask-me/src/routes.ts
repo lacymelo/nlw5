@@ -13,6 +13,12 @@ const messagesController = new MessagesController()
 //cria configuração
 routes.post('/settings', settingsController.create)
 
+//busca configuração
+routes.post('/settings/:username', settingsController.findByUsername)
+
+//atualiza configuração
+routes.put('/settings/:username', settingsController.update)
+
 //cria um novo usuário
 routes.post('/users', usersController.create)
 

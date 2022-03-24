@@ -7,15 +7,15 @@ interface ICreateSettings {
     chat: boolean
 }
 
-class SettingsService{
+class SettingsService {
     private settingRepository: Repository<Setting>
 
-    constructor(){
+    constructor() {
         this.settingRepository = getCustomRepository(SettingsRepositories)
     }
 
 
-    async create(settings: ICreateSettings){
+    async create(settings: ICreateSettings) {
         const { username, chat } = settings
 
         const settingAlreadyExists = await this.settingRepository.findOne({
@@ -24,7 +24,7 @@ class SettingsService{
             }
         })
 
-        if(settingAlreadyExists){
+        if (settingAlreadyExists) {
             throw new Error('Setting already exists.')
         }
 
@@ -36,6 +36,27 @@ class SettingsService{
         await this.settingRepository.save(setting)
 
         return setting
+    }
+
+    async findByUsername(username: string) {
+        const settings = await this.settingRepository.findOne({
+            username
+        })
+
+        return settings
+    }
+
+    async update(username: string, chat: boolean) {
+        const settings = await this.settingRepository
+            .createQueryBuilder()
+            .update(Setting)
+            .set({ chat })
+            .where("username = :username", {
+                username
+            })
+            .execute()
+
+        return settings
     }
 }
 

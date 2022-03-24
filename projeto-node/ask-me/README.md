@@ -142,6 +142,38 @@
 ---
 
 <h2 align="left">
+    🛠️ Biblioteca para trabalhar com eventos em tempo real
+</h2>
+
+<h3 align="justify" >
+    - yarn add socket.io
+    - yarn add @types/socket.io -D
+</h3>
+
+---
+
+<h2 align="left">
+    🛠️ Biblioteca para trabalhar com html no nodejs
+</h2>
+
+<h3 align="justify" >
+    - yarn add ejs
+</h3>
+
+---
+
+<h2 align="left">
+    🛠️ Biblioteca para trabalhar com websocket no lado
+    do client
+</h2>
+
+<h3 align="justify" >
+    - yarn add socket.io-client
+</h3>
+
+---
+
+<h2 align="left">
     🛠️ Biblioteca para validação de um usuário
 </h2>
 
@@ -182,22 +214,3 @@
     - yarn add @types/cors -D
 </h3>
 
----
-
-<h2 align="left">
-    🛠️ Biblioteca para gerenciar variáveis de ambiente
-</h2>
-
-<h3 align="justify" >
-    - yarn add dotenv
-</h3>
-
----
-
-<h2 align="left">
-    🛠️ Biblioteca Para validar dados de uma requisição
-</h2>
-
-<h3 align="justify" >
-    - yarn add yup
-</h3>

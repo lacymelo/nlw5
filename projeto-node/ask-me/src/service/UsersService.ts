@@ -13,9 +13,15 @@ class UsersService {
         this.userRepository = getCustomRepository(UsersRepositories)
     }
 
+    async show({email}: ICreateUsers){
+        const userAlreadyExists = await this.userRepository.findOne({email})
+
+        return userAlreadyExists
+    }
+
     async create({email}: ICreateUsers){
 
-        const userAlreadyExists = await this.userRepository.findOne({email})
+        const userAlreadyExists = this.show({email})
 
         //verifica se este email já existe na base de dados
         if(userAlreadyExists){
