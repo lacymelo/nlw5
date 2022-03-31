@@ -27,7 +27,7 @@ class MessagesService{
         return message
     }
 
-    async index(user_id: string){
+    async listByUser(user_id: string){
         const messages = await  this.messageRepository.find({
             where: {
                 user_id: user_id
